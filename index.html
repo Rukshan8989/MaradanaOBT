@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Service Number to Room Number</title>
+</head>
+<body>
+  <h1>Enter Your Service Number</h1>
+  <form id="serviceForm">
+    <label for="serviceNumber">Service Number:</label>
+    <input type="text" id="serviceNumber" name="serviceNumber" required>
+    <br><br>
+    <input type="submit" value="Get Room Number">
+  </form>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById('serviceForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var serviceNumber = document.getElementById('serviceNumber').value;
+      
+      // Lookup table for service numbers to room numbers
+      var roomNumbers = {
+        '012298': '4',
+        '011154': '5',
+        '017300': '6',
+        '009957': '7',
+        '011229': '8',
+        '017314': '4',
+        '008754': '5',
+        '017283': '6',
+        '017443': '7',
+        '014595': '8',
+        '014615': '4',
+        '017464': '5',
+        '017341': '6',
+        '010968': '7',
+        '018728': '8',
+        '012463': '4',
+        '007885': '5',
+        '017347': '6',
+        '017817': '7',
+        '000264': '1',
+        '018730': '2',
+        '016366': '3',
+        '009838': '1',
+        '008812': '2',
+        '011589': '3',
+        '007994': '1',
+        '016280': '2',
+        '017446': '3',
+        '008461': '1',
+        '007636': '2'
+      };
+
+      var roomNumber = roomNumbers[serviceNumber];
+      document.getElementById('result').innerText = roomNumber ? 'Your room number is: ' + roomNumber : 'Service number not found.';
+    });
+  </script>
+</body>
+</html>
